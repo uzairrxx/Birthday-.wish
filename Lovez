@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Zara 💖</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Falling Hearts Animation */
+        .heart {
+            position: fixed;
+            color: #ff6b9d;
+            font-size: 20px;
+            animation: fall linear infinite;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        
+        .header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            color: #fff;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 107, 157, 0.5); }
+            to { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 107, 157, 0.8); }
+        }
+        
+        .header p {
+            font-size: 1.3rem;
+            color: #f0f0f0;
+            font-weight: 300;
+        }
+        
+        /* Content Sections */
+        .section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transition: transform 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .section h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Birthday Wishes */
+        .wishes {
+            text-align: center;
+            color: #f0f0f0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .wishes p {
+            margin-bottom: 15px;
+        }
+        
+        /* Love Questions */
+        .question-container {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .question {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .answer-input {
+            width: 100%;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            text-align: center;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .answer-input:focus {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
+        }
+        
+        /* Do You Love Me Section */
+        .love-section {
+            text-align: center;
+            position: relative;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .love-question {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .love-buttons {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-yes {
+            background: linear-gradient(135deg, #ff6b9d, #ff8a9b);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
+        }
+        
+        .btn-yes:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 157, 0.6);
+        }
+        
+        .btn-no {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+        
+        /* Response Messages */
+        .response-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #ff6b9d, #ff8a9b);
+            color: white;
+            padding: 30px 50px;
+            border-radius: 20px;
+            font-size: 1.5rem;
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: none;
+            animation: celebration 0.8s ease-out;
+        }
+        
+        @keyframes celebration {
+            0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+            50% { transform: translate(-50%, -50%) scale(1.1); }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .love-question {
+                font-size: 2rem;
+            }
+            
+            .love-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
+        
+        /* Additional Animations */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-30px); }
+            60% { transform: translateY(-15px); }
+        }
+        
+        .bounce {
+            animation: bounce 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Happy Birthday Zara! 🎉</h1>
+            <p>Today is all about celebrating the most amazing person in the world! ✨</p>
+        </div>
+        
+        <!-- Birthday Wishes -->
+        <div class="section">
+            <h2>Birthday Wishes 🎂</h2>
+            <div class="wishes">
+                <p>🌟 May your special day be filled with endless joy, laughter, and all the love your heart can hold!</p>
+                <p>🎈 You light up every room you enter and make the world a brighter place just by being in it.</p>
+                <p>💖 Here's to another year of making beautiful memories, chasing dreams, and being absolutely incredible!</p>
+                <p>🌸 May this new year of your life bring you adventures, happiness, and everything you've been wishing for.</p>
+                <p>✨ You deserve all the wonderful things life has to offer. Happy Birthday, beautiful! 🥳</p>
+            </div>
+        </div>
+        
+        <!-- Love Questions -->
+        <div class="section">
+            <h2>Questions from the Heart 💕</h2>
+            
+            <div class="question-container">
+                <div class="question">On a scale of 1-10, how much do you love me? 💖</div>
+                <input type="text" class="answer-input" placeholder="Type your answer here...">
+            </div>
+            
+            <div class="question-container">
+                <div class="question">What's your favorite memory of us together? 🌟</div>
+                <input type="text" class="answer-input" placeholder="Share your favorite moment...">
+            </div>
+            
+            <div class="question-container">
+                <div class="question">If you could describe our love in three words, what would they be? 💫</div>
+                <input type="text" class="answer-input" placeholder="Three magical words...">
+            </div>
+            
+            <div class="question-container">
+                <div class="question">What makes you smile when you think of me? 😊</div>
+                <input type="text" class="answer-input" placeholder="Tell me what brings joy to your heart...">
+            </div>
+            
+            <div class="question-container">
+                <div class="question">How do I make you feel special? 🦋</div>
+                <input type="text" class="answer-input" placeholder="You make me feel...">
+            </div>
+        </div>
+        
+        <!-- Do You Love Me Section -->
+        <div class="section">
+            <div class="love-section">
+                <div class="love-question">Do you love me? 💖</div>
+                <div class="love-buttons">
+                    <button class="btn btn-yes" onclick="showLove()">YES! 💕</button>
+                    <button class="btn btn-no" id="noBtn" onclick="runAway()">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Response Message -->
+    <div class="response-message" id="responseMessage"></div>
+    
+    <script>
+        // Falling Hearts Animation
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '💖';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            heart.style.opacity = Math.random();
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+        
+        // Create hearts continuously
+        setInterval(createHeart, 300);
+        
+        // Love Section Functionality
+        let attempts = 0;
+        
+        function showLove() {
+            const messages = [
+                "Yay! I love you too! 💖✨",
+                "You make my heart so happy! 🥰💕",
+                "I knew it! We're perfect together! 🌟💖",
+                "You're the best! Happy Birthday my love! 🎉💕"
+            ];
+            
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            const responseDiv = document.getElementById('responseMessage');
+            responseDiv.innerHTML = randomMessage;
+            responseDiv.style.display = 'block';
+            
+            // Create celebration hearts
+            for(let i = 0; i < 20; i++) {
+                setTimeout(() => createCelebrationHeart(), i * 100);
+            }
+            
+            setTimeout(() => {
+                responseDiv.style.display = 'none';
+            }, 3000);
+        }
+        
+        function createCelebrationHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '💖';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = '1s';
+            heart.style.fontSize = '30px';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 1000);
+        }
+        
+        function runAway() {
+            attempts++;
+            const noBtn = document.getElementById('noBtn');
+            const container = noBtn.closest('.love-section');
+            const containerRect = container.getBoundingClientRect();
+            
+            const messages = [
+                "Hey! Click the right button! 😤💕",
+                "Come on, you know you love me! 🥺💖",
+                "Stop running away from love! 😂💕",
+                "Just say yes already! 🙈💖",
+                "You're making this harder than it needs to be! 😅💕"
+            ];
+            
+            if (attempts < 5) {
+                // Move the button to a random position
+                const maxX = containerRect.width - noBtn.offsetWidth;
+                const maxY = containerRect.height - noBtn.offsetHeight;
+                
+                const randomX = Math.random() * maxX;
+                const randomY = Math.random() * maxY;
+                
+                noBtn.style.position = 'absolute';
+                noBtn.style.left = randomX + 'px';
+                noBtn.style.top = randomY + 'px';
+                noBtn.style.transition = 'all 0.3s ease';
+                
+                // Show playful message
+                const responseDiv = document.getElementById('responseMessage');
+                responseDiv.innerHTML = messages[attempts - 1];
+                responseDiv.style.display = 'block';
+                responseDiv.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+                
+                setTimeout(() => {
+                    responseDiv.style.display = 'none';
+                }, 2000);
+                
+            } else {
+                // After 5 attempts, make it impossible to click no
+                noBtn.style.display = 'none';
+                
+                const responseDiv = document.getElementById('responseMessage');
+                responseDiv.innerHTML = "Fine! I'll take that as a YES! 😊💖<br>Happy Birthday Zara! 🎉";
+                responseDiv.style.display = 'block';
+                responseDiv.style.background = 'linear-gradient(135deg, #ff6b9d, #ff8a9b)';
+                
+                // Create celebration
+                for(let i = 0; i < 15; i++) {
+                    setTimeout(() => createCelebrationHeart(), i * 150);
+                }
+                
+                setTimeout(() => {
+                    responseDiv.style.display = 'none';
+                    // Reset everything
+                    noBtn.style.display = 'inline-block';
+                    noBtn.style.position = 'relative';
+                    noBtn.style.left = 'auto';
+                    noBtn.style.top = 'auto';
+                    attempts = 0;
+                }, 4000);
+            }
+        }
+        
+        // Add bounce animation to inputs on focus
+        document.querySelectorAll('.answer-input').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('bounce');
+                setTimeout(() => {
+                    this.parentElement.classList.remove('bounce');
+                }, 1000);
+            });
+        });
+        
+        // Add some interactive effects
+        document.querySelectorAll('.section').forEach(section => {
+            section.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            section.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
